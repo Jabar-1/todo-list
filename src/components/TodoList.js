@@ -15,21 +15,21 @@ function TodoList() {
         setTodos(newTodos)
     };
 
-    // const completeTodo = id =>{
-    //     let updateTodos = todos.map(todo => {
-    //         if (todo.id === id) {
-    //             todo.isComplete = !todo.isComplete
-    //         }
-    //         return todo
-    //     })
+    const completeTodo = id =>{
+        let updateTodos = todos.map(todo => {
+            if (todo.id === id) {
+                todo.isComplete = !todo.isComplete
+            }
+            return todo
+        })
 
-    //     setTodos(updateTodos);
-    // }
+        setTodos(updateTodos);
+    }
     return (
         <div>
             <h1>What's the Plans for Today</h1>
             <TodoForm onSubmit={addTodo}/>
-            <Todo />
+            <Todo todo={todos} completeTodo={completeTodo}/>
             
         </div>
     )
